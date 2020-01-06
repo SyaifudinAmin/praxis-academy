@@ -1,0 +1,1 @@
+(on /dev/sda1) : /dev/ adalah bagian dalam directory yang mencakup seluruh file dalan device. /sda1 yang berarti partisi pertama dari disk SCSI

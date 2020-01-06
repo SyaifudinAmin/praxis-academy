@@ -1,0 +1,10 @@
+Linux flitcker 4.15.0-72-generic #81-Ubuntu SMP Tue Nov 26 12:20:02 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+Linux : Nama Kernel
+flitcker : nama host
+4.15.0-72-generic : versi kernel
+#81-Ubuntu SMP Tue Nov 26 12:20:02 UTC 2019 : compile file
+x86_64 : arsitektur mesin
+x86_64 : arsitektur processor
+x86_64 : arsitekrut Sistem Operasi
+GNU/Linux : Sistem Operasi
