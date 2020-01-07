@@ -1,8 +1,6 @@
-# Python3 program to perform TimSort. 
-RUN = 32
-	
-# This function sorts array from left index to 
-# to right index which is of size atmost RUN 
+
+RUN = 32	
+#mengurutkan indeks dari kiri ke kanan dengan ukuran yang paling besar pada RUN
 def insertionSort(arr, left, right): 
 
 	for i in range(left + 1, right+1): 
@@ -16,11 +14,10 @@ def insertionSort(arr, left, right):
 		
 		arr[j+1] = temp 
 	
-# merge function merges the sorted runs 
+# menggabungkan nilai yang sudah di urutkan run 
 def merge(arr, l, m, r): 
 
-	# original array is broken in two parts 
-	# left and right array 
+	#memisah array dalam 2 bagian
 	len1, len2 = m - l + 1, r - m 
 	left, right = [], [] 
 	for i in range(0, len1): 
@@ -29,8 +26,7 @@ def merge(arr, l, m, r):
 		right.append(arr[m + 1 + i]) 
 	
 	i, j, k = 0, 0, l 
-	# after comparing, we merge those two array 
-	# in larger sub array 
+	# setelah membandingkan , kemudian di gabungkan dalam sub array
 	while i < len1 and j < len2: 
 	
 		if left[i] <= right[j]: 
@@ -43,36 +39,34 @@ def merge(arr, l, m, r):
 		
 		k += 1
 	
-	# copy remaining elements of left, if any 
+	# menyalin elemen yang ada di kiri jika masih tersisa 
 	while i < len1: 
 	
 		arr[k] = left[i] 
 		k += 1
 		i += 1
 	
-	# copy remaining element of right, if any 
+	# menyalin elemen yang ada di kanan jika masih tersisa
 	while j < len2: 
 		arr[k] = right[j] 
 		k += 1
 		j += 1
 	
-# iterative Timsort function to sort the 
-# array[0...n-1] (similar to merge sort) 
+# mengurutkan array[0...n-1] mirip merge sort
 def timSort(arr, n): 
 
-	# Sort individual subarrays of size RUN 
+	# sorting sub array dengan run
 	for i in range(0, n, RUN): 
 		insertionSort(arr, i, min((i+31), (n-1))) 
 	
-	# start merging from size RUN (or 32). It will merge 
-	# to form size 64, then 128, 256 and so on .... 
+	# mulai menggabungkan dari ukuran run (32).
+	# akan digabungkan ke ukuran 64, kemudian 128, 256, dst
 	size = RUN 
 	while size < n: 
 	
-		# pick starting point of left sub array. We 
-		# are going to merge arr[left..left+size-1] 
-		# and arr[left+size, left+2*size-1] 
-		# After every merge, we increase left by 2*size 
+		# mengambil nilai awal dari array kiri.
+		# menggabungkan  arr[left..left+size-1] dan arr[left+size, left+2*size-1]
+		# setelah semua di gabungkan, ukuran left di jadikan 2*size
 		for left in range(0, n, 2*size): 
 		
 			# find ending point of left sub array 
@@ -94,17 +88,13 @@ def printArray(arr, n):
 	print() 
 
 	
-# Driver program to test above function 
-# if __name__ == "__main__": 
 
 arr = [14, 23, 12, 42, 37, 3, 34, 22, 1, 19] 
 n = len(arr) 
-print("Given Array is") 
+print("Data awal:") 
 printArray(arr, n) 
 
 timSort(arr, n) 
 
-print("After Sorting Array is") 
+print("Data setelah diurutkan:") 
 printArray(arr, n) 
-
-# This code is contributed by Rituraj Jain 

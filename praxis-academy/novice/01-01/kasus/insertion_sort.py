@@ -1,4 +1,35 @@
-m = [14, 23, 12, 42, 37, 3, 34, 22, 1, 19]
+def functiinsertion(llist):
+    for index in range(1, len(llist)):
+        current = llist[index]
+        position = index
+
+        while position > 0 and llist[position-1] > current:
+            print("Swapped {} for {}".format(llist[position], llist[position-1]))
+            llist[position] = llist[position-1]
+            print(llist)
+            position -= 1
+
+        llist[position] = current
+
+m = [11, 21, 12, 42, 37, 3, 34, 22, 1, 19]
+print ("Data Awal " ,m)
+functiinsertion(m)
+print("------------------------")
+print (m)
+
+# function insertionSortR(array A, int n)
+#      if n > 0
+#         insertionSortR(A, n-1)
+#         x ← A[n]
+#         j ← n-1
+#         while j >= 0 and A[j] > x
+#             A[j+1] ← A[j]
+#             j ← j-1
+#         end while
+#         A[j+1] ← x
+#      end if
+#  end function
+
 # for i in range(1, len(m)):
 #     # print (i)
 #     #i = 1 - 7;
@@ -19,30 +50,3 @@ m = [14, 23, 12, 42, 37, 3, 34, 22, 1, 19]
 
 # def insertionSort(my_list):
     # for every element in our array
-print ("Data Awal " ,m)
-for index in range(1, len(m)):
-    current = m[index]
-    position = index
-
-    while position > 0 and m[position-1] > current:
-        print("Swapped {} for {}".format(m[position], m[position-1]))
-        m[position] = m[position-1]
-        print(m)
-        position -= 1
-
-    m[position] = current
-print("------------------------")
-print (m)
-
-# function insertionSortR(array A, int n)
-#      if n > 0
-#         insertionSortR(A, n-1)
-#         x ← A[n]
-#         j ← n-1
-#         while j >= 0 and A[j] > x
-#             A[j+1] ← A[j]
-#             j ← j-1
-#         end while
-#         A[j+1] ← x
-#      end if
-#  end function
