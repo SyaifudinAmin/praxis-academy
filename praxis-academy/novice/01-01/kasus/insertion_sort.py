@@ -1,20 +1,37 @@
-def functiinsertion(llist):
-    for index in range(1, len(llist)):
-        current = llist[index]
-        position = index
+# def functiinsertion(llist):
+#     for index in range(1, len(llist)):
+#         current = llist[index]
+#         position = index
 
-        while position > 0 and llist[position-1] > current:
-            print("Swapped {} for {}".format(llist[position], llist[position-1]))
-            llist[position] = llist[position-1]
-            print(llist)
-            position -= 1
+#         while position > 0 and llist[position-1] > current:
+#             print("Swapped {} for {}".format(llist[position], llist[position-1]))
+#             llist[position] = llist[position-1]
+#             print(llist)
+#             position -= 1
 
-        llist[position] = current
+#         llist[position] = current
+
+def insertionSort(arr): 
+  
+    # Traverse through 1 to len(arr) 
+    for i in range(1, len(arr)): 
+  
+        key = arr[i] 
+  
+        # Move elements of arr[0..i-1], that are 
+        # greater than key, to one position ahead 
+        # of their current position 
+        j = i-1
+        while j >=0 and key < arr[j] : 
+                arr[j+1] = arr[j] 
+                j -= 1
+        arr[j+1] = key 
 
 m = [11, 21, 12, 42, 37, 3, 34, 22, 1, 19]
-print ("Data Awal " ,m)
-functiinsertion(m)
-print("------------------------")
+print ("Data Awal")
+print(m)
+insertionSort(m)
+print("Hasil setelah  Sorting")
 print (m)
 
 # function insertionSortR(array A, int n)

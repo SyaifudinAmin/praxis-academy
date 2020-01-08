@@ -1,5 +1,5 @@
 
-RUN = 32	
+# RUN = 32	
 #mengurutkan indeks dari kiri ke kanan dengan ukuran yang paling besar pada RUN
 def insertionSort(arr, left, right): 
 
@@ -53,8 +53,9 @@ def merge(arr, l, m, r):
 		j += 1
 	
 # mengurutkan array[0...n-1] mirip merge sort
-def timSort(arr, n): 
-
+# RUN = 32
+def timSort(arr, n, RUN): 
+	# RUN = 32
 	# sorting sub array dengan run
 	for i in range(0, n, RUN): 
 		insertionSort(arr, i, min((i+31), (n-1))) 
@@ -92,9 +93,10 @@ def printArray(arr, n):
 arr = [14, 23, 12, 42, 37, 3, 34, 22, 1, 19] 
 n = len(arr) 
 print("Data awal:") 
+r = 32
 printArray(arr, n) 
 
-timSort(arr, n) 
+timSort(arr, n, r) 
 
 print("Data setelah diurutkan:") 
 printArray(arr, n) 
