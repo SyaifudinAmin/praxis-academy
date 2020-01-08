@@ -3,8 +3,16 @@ import random
 def sebelum ():
     print ("Data Sebelum diurutkan :")
 
-def sesudah ():
-    print ("Data Sesudah diurutkan :")
+def sesudahquick ():
+    print ("Data Sesudah diurutkan dengan quick sort:")
+def sesudahselect ():
+    print ("Data Sesudah diurutkan dengan selection sort:")
+def sesudahtim ():
+    print ("Data Sesudah diurutkan dengan tim sort:")
+def sesudahbubble ():
+    print ("Data Sesudah diurutkan dengan bubble sort:")
+def sesudahinsert ():
+    print ("Data Sesudah diurutkan dengan insertion sort:")
 #Ranfdom Angka-----------------------------------------------
 def randomangka():
     angka = []
