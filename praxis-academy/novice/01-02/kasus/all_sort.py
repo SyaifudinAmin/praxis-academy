@@ -37,7 +37,7 @@ sesudahinsert()
 print(d)
 print("=========================================")
 #tim sort
-sebelum()
+sebelum()s
 print(e)
 timSort(e,f,g)
 sesudahtim()
